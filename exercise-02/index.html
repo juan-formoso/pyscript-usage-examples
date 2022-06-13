@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+        - numpy
+        - matplotlib
+        - paths:
+            - dados.py
+    </py-env>
+    <title>Juan Formoso :: Praticando Pyscript</title>
+  </head>
+  <body>
+    <div id="grafico">Gráfico com números aleatórios :: PyScript</div>
+    <py-script output="grafico">
+    import matplotlib.pyplot as plt
+    from dados import x_y_aleatorio
+
+    x, y = x_y_aleatorio(n=1000)
+
+    fig, ax = plt.subplots()
+    ax.scatter(x, y)
+    fig
+    </py-script>
+  </body>
+</html>
